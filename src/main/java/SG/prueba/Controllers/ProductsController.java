@@ -53,7 +53,7 @@ public class ProductsController {
         }
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/eliminar/{id}")
     public ResponseEntity<Void> eliminar(@PathVariable int id) {
         Products existingProduct = productsService.listarPorId(id);
         if (existingProduct != null) {
