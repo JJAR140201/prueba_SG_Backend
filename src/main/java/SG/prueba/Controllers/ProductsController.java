@@ -19,13 +19,13 @@ public class ProductsController {
         this.productsService = productsService;
     }
 
-    @GetMapping
+    @GetMapping("/listar")
     public ResponseEntity<List<Products>> listarTodos() {
         List<Products> productsList = productsService.listarTodos();
         return new ResponseEntity<>(productsList, HttpStatus.OK);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/listar/{id}")
     public ResponseEntity<Products> listarPorId(@PathVariable int id) {
         Products product = productsService.listarPorId(id);
         if (product != null) {
