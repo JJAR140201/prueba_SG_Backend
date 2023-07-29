@@ -20,13 +20,13 @@ public class InvoiceDetailsController {
         this.invoiceDetailsService = invoiceDetailsService;
     }
 
-    @GetMapping
+    @GetMapping("/listar")
     public ResponseEntity<List<InvoiceDetails>> listarTodos() {
         List<InvoiceDetails> invoiceDetailsList = invoiceDetailsService.listarTodos();
         return new ResponseEntity<>(invoiceDetailsList, HttpStatus.OK);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/listar/{id}")
     public ResponseEntity<InvoiceDetails> listarPorId(@PathVariable int id) {
         InvoiceDetails invoiceDetails = invoiceDetailsService.listarPorId(id);
         if (invoiceDetails != null) {
@@ -36,13 +36,13 @@ public class InvoiceDetailsController {
         }
     }
 
-    @PostMapping
+    @PostMapping("/registrar")
     public ResponseEntity<Void> registrar(@RequestBody InvoiceDetails entidad) {
         invoiceDetailsService.registrar(entidad);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/actualizar/{id}")
     public ResponseEntity<Void> actualizar(@PathVariable int id, @RequestBody InvoiceDetails entidad) {
         InvoiceDetails existingInvoiceDetails = invoiceDetailsService.listarPorId(id);
         if (existingInvoiceDetails != null) {
@@ -54,7 +54,7 @@ public class InvoiceDetailsController {
         }
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/eliminar/{id}")
     public ResponseEntity<Void> eliminar(@PathVariable int   id) {
         InvoiceDetails existingInvoiceDetails = invoiceDetailsService.listarPorId(id);
         if (existingInvoiceDetails != null) {

@@ -19,13 +19,13 @@ public class InvoiceController {
         this.invoiceService = invoiceService;
     }
 
-    @GetMapping
+    @GetMapping("/listar")
     public ResponseEntity<List<Invoices>> listarTodos() {
         List<Invoices> invoicesList = invoiceService.listarTodos();
         return new ResponseEntity<>(invoicesList, HttpStatus.OK);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/listar/{id}")
     public ResponseEntity<Invoices> listarPorId(@PathVariable int id) {
         Invoices invoices = invoiceService.listarPorId(id);
         if (invoices != null) {
@@ -35,13 +35,13 @@ public class InvoiceController {
         }
     }
 
-    @PostMapping
+    @PostMapping("/registrar")
     public ResponseEntity<Void> registrar(@RequestBody Invoices entidad) {
         invoiceService.registrar(entidad);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/actualizar/{id}")
     public ResponseEntity<Void> actualizar(@PathVariable int id, @RequestBody Invoices entidad) {
         Invoices existingInvoice = invoiceService.listarPorId(id);
         if (existingInvoice != null) {
@@ -53,7 +53,7 @@ public class InvoiceController {
         }
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/eliminar/{id}")
     public ResponseEntity<Void> eliminar(@PathVariable int id) {
         Invoices existingInvoice = invoiceService.listarPorId(id);
         if (existingInvoice != null) {
