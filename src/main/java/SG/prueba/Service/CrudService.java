@@ -6,11 +6,11 @@ public interface CrudService<T> {
 
     public List<T> listarTodos();
 
-    public T listarPorId(Long id);
+    public T listarPorId(int id);
 
     public void registrar(T entidad);
 
     public void actualizar(T entidad);
 
-    public void eliminar(Long id);
+    public void eliminar(int id);
 }

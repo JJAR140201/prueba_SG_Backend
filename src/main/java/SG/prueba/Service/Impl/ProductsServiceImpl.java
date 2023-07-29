@@ -20,7 +20,7 @@ public class ProductsServiceImpl implements ProductsService {
     }
 
     @Override
-    public Products listarPorId(Long id) {
+    public Products listarPorId(int id) {
         return repo.findById(id).orElse(null);
     }
 
@@ -35,7 +35,7 @@ public class ProductsServiceImpl implements ProductsService {
     }
 
     @Override
-    public void eliminar(Long id) {
+    public void eliminar(int id) {
         repo.deleteById(id);
     }
 }

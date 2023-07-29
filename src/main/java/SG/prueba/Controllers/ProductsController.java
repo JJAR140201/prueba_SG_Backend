@@ -26,7 +26,7 @@ public class ProductsController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Products> listarPorId(@PathVariable Long id) {
+    public ResponseEntity<Products> listarPorId(@PathVariable int id) {
         Products product = productsService.listarPorId(id);
         if (product != null) {
             return new ResponseEntity<>(product, HttpStatus.OK);
@@ -42,7 +42,7 @@ public class ProductsController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Void> actualizar(@PathVariable Long id, @RequestBody Products entidad) {
+    public ResponseEntity<Void> actualizar(@PathVariable int id, @RequestBody Products entidad) {
         Products existingProduct = productsService.listarPorId(id);
         if (existingProduct != null) {
             entidad.setId(id);
@@ -54,7 +54,7 @@ public class ProductsController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> eliminar(@PathVariable Long id) {
+    public ResponseEntity<Void> eliminar(@PathVariable int id) {
         Products existingProduct = productsService.listarPorId(id);
         if (existingProduct != null) {
             productsService.eliminar(id);

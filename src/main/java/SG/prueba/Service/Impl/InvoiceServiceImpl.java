@@ -19,7 +19,7 @@ public class InvoiceServiceImpl implements InvoiceService {
     }
 
     @Override
-    public Invoices listarPorId(Long id) {
+    public Invoices listarPorId(int id) {
         return repo.findById(id).orElse(null);
     }
 
@@ -34,7 +34,7 @@ public class InvoiceServiceImpl implements InvoiceService {
     }
 
     @Override
-    public void eliminar(Long id) {
+    public void eliminar(int id) {
         repo.deleteById(id);
     }
 }

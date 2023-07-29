@@ -26,7 +26,7 @@ public class InvoiceController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Invoices> listarPorId(@PathVariable Long id) {
+    public ResponseEntity<Invoices> listarPorId(@PathVariable int id) {
         Invoices invoices = invoiceService.listarPorId(id);
         if (invoices != null) {
             return new ResponseEntity<>(invoices, HttpStatus.OK);
@@ -42,7 +42,7 @@ public class InvoiceController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Void> actualizar(@PathVariable Long id, @RequestBody Invoices entidad) {
+    public ResponseEntity<Void> actualizar(@PathVariable int id, @RequestBody Invoices entidad) {
         Invoices existingInvoice = invoiceService.listarPorId(id);
         if (existingInvoice != null) {
             entidad.setId(id);
@@ -54,7 +54,7 @@ public class InvoiceController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> eliminar(@PathVariable Long id) {
+    public ResponseEntity<Void> eliminar(@PathVariable int id) {
         Invoices existingInvoice = invoiceService.listarPorId(id);
         if (existingInvoice != null) {
             invoiceService.eliminar(id);
