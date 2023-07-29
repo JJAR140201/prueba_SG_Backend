@@ -35,7 +35,7 @@ public class ProductsController {
         }
     }
 
-    @PostMapping
+    @PostMapping("/registrar")
     public ResponseEntity<Void> registrar(@RequestBody Products entidad) {
         productsService.registrar(entidad);
         return new ResponseEntity<>(HttpStatus.CREATED);
