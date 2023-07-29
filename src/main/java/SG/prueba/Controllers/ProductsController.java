@@ -41,7 +41,7 @@ public class ProductsController {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/actualizar/{id}")
     public ResponseEntity<Void> actualizar(@PathVariable int id, @RequestBody Products entidad) {
         Products existingProduct = productsService.listarPorId(id);
         if (existingProduct != null) {
