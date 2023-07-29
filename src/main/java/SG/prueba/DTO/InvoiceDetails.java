@@ -28,7 +28,7 @@ public class InvoiceDetails {
     private Products Products ;
 
     @Column(name = "quantity")
-    private int quantity;
+    private Integer quantity;
 
     @Column(name = "price")
     private float price;
