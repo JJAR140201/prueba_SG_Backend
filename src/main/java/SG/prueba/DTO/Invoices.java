@@ -19,31 +19,31 @@ public class Invoices {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "nit", nullable = true)
+    @Column(name = "nit")
     private String nit;
 
-    @Column(name = "name", nullable = true)
+    @Column(name = "name")
     private String name;
 
-    @Column(name = "subTotal", nullable = true)
+    @Column(name = "subTotal")
     private float subTotal;
 
-    @Column(name = "taxTotal", nullable = true)
+    @Column(name = "taxTotal")
     private float taxTotal;
 
-    @Column(name = "totalDiscount", nullable = true)
+    @Column(name = "totalDiscount")
     private float totalDiscount;
 
-    @Column(name = "total", nullable = true)
+    @Column(name = "total")
     private float total;
 
-    @Column(name = "created_at", nullable = true)
+    @Column(name = "created_at")
     private LocalDateTime created_at;
 
-    @Column(name = "updated_at", nullable = true)
+    @Column(name = "updated_at")
     private LocalDateTime  updated_at;
 
-    @Column(name = "deleted_at", nullable = true)
+    @Column(name = "deleted_at")
     private LocalDateTime  deleted_at;
 
 }

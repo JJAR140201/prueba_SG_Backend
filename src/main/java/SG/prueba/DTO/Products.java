@@ -19,24 +19,24 @@ public class Products {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "code", nullable = true, length = 12)
+    @Column(name = "code", length = 12)
     private String code;
 
-    @Column(name = "name", nullable = true)
+    @Column(name = "name")
     private String name;
 
-    @Column(name = "price", nullable = true)
+    @Column(name = "price")
     private float price;
 
-    @Column(name = "stock", nullable = true)
+    @Column(name = "stock")
     private int stock;
 
-    @Column(name = "created_at", nullable = true)
+    @Column(name = "created_at")
     private LocalDateTime created_at;
 
-    @Column(name = "updated_at", nullable = true)
+    @Column(name = "updated_at")
     private LocalDateTime  updated_at;
 
-    @Column(name = "deleted_at", nullable = true)
+    @Column(name = "deleted_at")
     private LocalDateTime  deleted_at;
 }

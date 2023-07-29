@@ -27,21 +27,21 @@ public class InvoiceDetails {
     @JoinColumn(name = "idProduct", nullable = false)
     private Products Products ;
 
-    @Column(name = "quantity", nullable = true)
+    @Column(name = "quantity")
     private int quantity;
 
-    @Column(name = "price", nullable = true)
+    @Column(name = "price")
     private float price;
 
-    @Column(name = "discount", nullable = true)
+    @Column(name = "discount")
     private float discount;
 
-    @Column(name = "created_at", nullable = true)
+    @Column(name = "created_at")
     private LocalDateTime created_at;
 
-    @Column(name = "updated_at", nullable = true)
+    @Column(name = "updated_at")
     private LocalDateTime  updated_at;
 
-    @Column(name = "deleted_at", nullable = true)
+    @Column(name = "deleted_at")
     private LocalDateTime  deleted_at;
 }
